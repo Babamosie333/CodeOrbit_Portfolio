@@ -10,7 +10,7 @@ import AppOverlays from "@/components/app-overlays";
 import { Providers } from "@/components/providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-export const metadata: Metadata = {
+export const meta Metadata = {
   title: config.title,
   description: config.description.long,
   keywords: config.keywords,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: config.site,
     images: [
       {
-        url: config.ogImg,
+        url: "/assets/readme-preview.png",  // ← direct public path
         width: 800,
         height: 600,
         alt: "Portfolio preview",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: config.title,
     description: config.description.short,
-    images: [config.ogImg],
+    images: ["/assets/readme-preview.png"], // ← same image
   },
   robots: {
     index: true,
@@ -58,7 +58,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, archivoBlack.variable, "font-display"].join(" ")} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={[inter.variable, archivoBlack.variable, "font-display"].join(" ")}
+      suppressHydrationWarning
+    >
       <head>
         <Script
           defer
