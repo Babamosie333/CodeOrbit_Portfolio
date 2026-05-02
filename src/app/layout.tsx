@@ -10,7 +10,7 @@ import AppOverlays from "@/components/app-overlays";
 import { Providers } from "@/components/providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-export const meta Metadata = {
+export const metadata:Metadata = {
   title: config.title,
   description: config.description.long,
   keywords: config.keywords,
