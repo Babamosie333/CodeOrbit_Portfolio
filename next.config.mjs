@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: true
-  },
+  // eslint block removed (no longer supported in Next.js 16)
   async headers() {
     return [
       {
@@ -21,12 +19,8 @@ const nextConfig = {
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
-      {
-        source: "/_next/static/(.*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
+      // Removed: /_next/static/(.*) Cache-Control block
+      // because Next.js overwrites it automatically
     ];
   },
 };
